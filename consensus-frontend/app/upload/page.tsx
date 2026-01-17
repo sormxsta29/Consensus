@@ -24,30 +24,14 @@ export default function UploadPage() {
         const text = await file.text();
         processText(text);
       } else if (file.type === "application/pdf" || file.name.endsWith(".pdf")) {
-        try {
-          // Dynamic import of PDF.js
-          const pdfjs = await import("pdfjs-dist/build/pdf");
-          // Set worker path to CDN
-          (pdfjs as any).GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${(pdfjs as any).version}/pdf.worker.min.js`;
-          
-          const array = await file.arrayBuffer();
-          const doc = await (pdfjs as any).getDocument({ data: array }).promise;
-          let txt = "";
-          
-          for (let i = 1; i <= doc.numPages; i++) {
-            const page = await doc.getPage(i);
-            const content = await page.getTextContent();
-            const pageText = content.items.map((item: any) => item.str).join(" ");
-            txt += pageText + "\n";
-          }
-          
-          processText(txt);
-        } catch (err) {
-          console.error("PDF extraction error:", err);
-          setStatus("⚠️ PDF text extraction failed. Try uploading a .txt file or use server-side extraction.");
-        }
+        // For now, show message to convert PDF to text
+        // PDF.js has compatibility issues with Next.js build
+        setStatus("⚠️ PDF support temporarily disabled. Please convert your PDF to .txt or copy/paste the text directly.");
+        setRawText("");
+        setSanitized("");
+        setMapping({});
       } else {
-        setStatus("❌ Unsupported file type. Please upload .txt or .pdf");
+        setStatus("❌ Unsupported file type. Please upload .txt");
       }
     } catch (err) {
       console.error("File processing error:", err);
@@ -103,7 +87,7 @@ export default function UploadPage() {
             <input
               ref={fileRef}
               type="file"
-              accept=".txt,.pdf"
+              accept=".txt"
               onChange={handleFile}
               className="hidden"
               id="file-upload"
@@ -123,7 +107,10 @@ export default function UploadPage() {
             )}
           </div>
           <p className="text-sm text-war-room-500 mt-3">
-            📄 Supported formats: .txt, .pdf (client-side extraction)
+            📄 Supported formats: .txt (or paste text directly below)
+          </p>
+          <p className="text-xs text-war-room-400 mt-1">
+            💡 Tip: For PDF files, copy the text and paste it in the "Raw Document" area below
           </p>
           {maskingCount > 0 && (
             <div className="mt-4 flex items-center gap-2 text-sm text-emerald-700 bg-emerald-50 px-4 py-2 rounded">
