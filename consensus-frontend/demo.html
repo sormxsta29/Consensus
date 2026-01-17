@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consensus - Zero-Trust Contract Protocol</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'war-room': {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            200: '#bcccdc',
+                            300: '#9fb3c8',
+                            400: '#829ab1',
+                            500: '#627d98',
+                            600: '#486581',
+                            700: '#334e68',
+                            800: '#243b53',
+                            900: '#102a43',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-war-room-900 via-war-room-800 to-war-room-700 text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-war-room-800 shadow-lg border-b border-war-room-600">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-2 text-xl font-bold">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+                Consensus
+            </div>
+            <div class="flex gap-6 text-sm">
+                <a href="#home" class="hover:text-blue-300 transition">Home</a>
+                <a href="#upload" class="hover:text-blue-300 transition">Upload</a>
+                <a href="#demo" class="hover:text-blue-300 transition">Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div id="home" class="max-w-6xl mx-auto px-6 py-20">
+        <div class="text-center mb-16">
+            <h1 class="text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                Consensus
+            </h1>
+            <p class="text-2xl text-war-room-200 mb-2">The Zero-Trust Contract Protocol</p>
+            <p class="text-lg text-war-room-300">Privacy-First CLM Platform • TechTriad Hackathon 2026</p>
+            <div class="mt-8">
+                <a href="#upload" class="inline-block bg-gradient-to-r from-blue-500 to-emerald-500 px-8 py-4 rounded-lg text-lg font-semibold hover:scale-105 transition-transform">
+                    Try Demo Upload →
+                </a>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+            <div class="bg-war-room-700/50 backdrop-blur-sm rounded-lg p-6 border border-war-room-600">
+                <svg class="w-12 h-12 text-blue-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+                <h3 class="text-xl font-semibold mb-2">Privacy-First</h3>
+                <p class="text-war-room-300">
+                    PII sanitized locally before AI processing. Your data never leaves your control.
+                </p>
+            </div>
+
+            <div class="bg-war-room-700/50 backdrop-blur-sm rounded-lg p-6 border border-war-room-600">
+                <svg class="w-12 h-12 text-emerald-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                </svg>
+                <h3 class="text-xl font-semibold mb-2">Red Team AI</h3>
+                <p class="text-war-room-300">
+                    Aggressive vulnerability analysis finds worst-case scenarios in your contracts.
+                </p>
+            </div>
+
+            <div class="bg-war-room-700/50 backdrop-blur-sm rounded-lg p-6 border border-war-room-600">
+                <svg class="w-12 h-12 text-purple-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                </svg>
+                <h3 class="text-xl font-semibold mb-2">Blockchain Trust</h3>
+                <p class="text-war-room-300">
+                    Immutable registry and smart escrow on Polygon Amoy testnet.
+                </p>
+            </div>
+        </div>
+
+        <!-- How It Works -->
+        <div class="mt-20 bg-war-room-800/50 backdrop-blur-sm rounded-lg p-8 border border-war-room-600">
+            <h2 class="text-2xl font-bold mb-4">How It Works</h2>
+            <ol class="space-y-3 text-war-room-200">
+                <li class="flex gap-3">
+                    <span class="font-bold text-blue-400">1.</span>
+                    <span>Upload contract PDF/text — PII is masked client-side using regex patterns</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="font-bold text-emerald-400">2.</span>
+                    <span>Red Team AI analyzes sanitized text for vulnerabilities and risk scores</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="font-bold text-purple-400">3.</span>
+                    <span>Register contract hash on blockchain — immutable audit trail</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="font-bold text-yellow-400">4.</span>
+                    <span>Deploy escrow smart contract for milestone-based payments</span>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Upload Demo Section -->
+    <div id="upload" class="max-w-7xl mx-auto px-6 py-12">
+        <div class="bg-war-room-800/80 backdrop-blur-sm rounded-lg p-8 border border-war-room-600">
+            <h2 class="text-3xl font-bold mb-4 flex items-center gap-2">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                </svg>
+                Secure Upload Demo
+            </h2>
+            <p class="text-war-room-300 mb-6">Paste contract text below to see PII sanitization in action (client-side only)</p>
+            
+            <!-- Input Area -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-sm font-medium mb-2">Raw Contract Text</label>
+                    <textarea id="rawInput" 
+                        class="w-full h-64 bg-war-room-900 text-white rounded p-4 border border-war-room-600 font-mono text-sm"
+                        placeholder="Paste your contract here...&#10;&#10;Example:&#10;This agreement is between John Smith and Jane Doe.&#10;Payment of $50,000 due on 2026-03-15.&#10;Contact: john@example.com, phone: +1-555-1234"
+                    ></textarea>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Sanitized Preview</label>
+                    <textarea id="sanitizedOutput" 
+                        class="w-full h-64 bg-war-room-900 text-emerald-100 rounded p-4 border border-emerald-600 font-mono text-sm"
+                        readonly
+                        placeholder="Sanitized output will appear here..."
+                    ></textarea>
+                </div>
+            </div>
+
+            <div class="mt-4 flex gap-4">
+                <button onclick="sanitizeText()" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition">
+                    🔒 Sanitize PII
+                </button>
+                <button onclick="fillExample()" class="bg-war-room-700 hover:bg-war-room-600 px-6 py-3 rounded-lg font-semibold transition">
+                    📝 Load Example
+                </button>
+                <button onclick="clearAll()" class="bg-war-room-700 hover:bg-war-room-600 px-6 py-3 rounded-lg font-semibold transition">
+                    🗑️ Clear
+                </button>
+            </div>
+
+            <!-- Mapping Display -->
+            <div id="mapping" class="mt-6 hidden">
+                <h3 class="text-lg font-semibold mb-2">PII Mapping (Secure - Client Only)</h3>
+                <div id="mappingContent" class="bg-war-room-900 rounded p-4 border border-war-room-600 font-mono text-xs max-h-48 overflow-auto"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Status Section -->
+    <div id="demo" class="max-w-6xl mx-auto px-6 py-12">
+        <div class="bg-emerald-900/30 border border-emerald-600 rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+                <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Project Status
+            </h3>
+            <div class="space-y-2 text-sm">
+                <div class="flex items-center gap-2">
+                    <span class="text-emerald-400">✅</span>
+                    <span>All code files created and committed to GitHub</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-emerald-400">✅</span>
+                    <span>Smart contracts (Registry.sol, Escrow.sol) ready</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-emerald-400">✅</span>
+                    <span>PII sanitization working (see demo above)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-yellow-400">⚠️</span>
+                    <span><strong>Needs Node.js</strong> to run full Next.js application</span>
+                </div>
+            </div>
+            <div class="mt-4 p-4 bg-blue-900/30 border border-blue-600 rounded">
+                <p class="font-semibold mb-2">📦 To run the full application:</p>
+                <ol class="text-sm space-y-1 ml-4">
+                    <li>1. Install Node.js from <a href="https://nodejs.org" target="_blank" class="text-blue-300 underline">nodejs.org</a></li>
+                    <li>2. Run: <code class="bg-war-room-900 px-2 py-1 rounded">npm install</code></li>
+                    <li>3. Run: <code class="bg-war-room-900 px-2 py-1 rounded">npm run dev</code></li>
+                    <li>4. Open: <code class="bg-war-room-900 px-2 py-1 rounded">http://localhost:3000</code></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-war-room-400 border-t border-war-room-700 mt-12">
+        <p>Built for TechTriad Hackathon 2026 • <a href="https://github.com/sormxsta29/Consensus" target="_blank" class="text-blue-400 hover:underline">View on GitHub</a></p>
+    </footer>
+
+    <script>
+        // PII Sanitization Logic (Same as regex-sanitizer.ts)
+        let currentMapping = {};
+
+        function sanitizePII(text) {
+            const mapping = {};
+            const counts = { NAME: 0, DATE: 0, AMOUNT: 0, EMAIL: 0, PHONE: 0 };
+
+            const emailRe = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/g;
+            const phoneRe = /(?:\+?\d{1,3}[\s-]?)?(?:\(\d{2,3}\)[\s-]?|\d{2,4}[\s-])?\d{3,4}[\s-]?\d{3,4}/g;
+            const amountRe = /(?:\$|USD|EUR|£|€|INR|Rs\.?)(?:\s)?\d{1,3}(?:[,\s]\d{3})*(?:\.\d+)?/gi;
+            const dateRe = /\b(?:\d{4}-\d{2}-\d{2}|\d{1,2}[\/\-.]\d{1,2}[\/\-.]\d{2,4})\b/g;
+            const nameRe = /\b([A-Z][a-z]{1,}(?:\s+[A-Z][a-z]{1,}){1,2})\b/g;
+
+            let out = text;
+
+            out = out.replace(emailRe, (m) => {
+                const key = `[EMAIL_${++counts.EMAIL}]`;
+                mapping[key] = m;
+                return key;
+            });
+
+            out = out.replace(phoneRe, (m) => {
+                const key = `[PHONE_${++counts.PHONE}]`;
+                mapping[key] = m;
+                return key;
+            });
+
+            out = out.replace(amountRe, (m) => {
+                const key = `[AMOUNT_${++counts.AMOUNT}]`;
+                mapping[key] = m;
+                return key;
+            });
+
+            out = out.replace(dateRe, (m) => {
+                const key = `[DATE_${++counts.DATE}]`;
+                mapping[key] = m;
+                return key;
+            });
+
+            out = out.replace(nameRe, (m) => {
+                const key = `[NAME_${++counts.NAME}]`;
+                mapping[key] = m;
+                return key;
+            });
+
+            return { sanitized: out, mapping };
+        }
+
+        function sanitizeText() {
+            const input = document.getElementById('rawInput').value;
+            if (!input.trim()) {
+                alert('Please enter some text first!');
+                return;
+            }
+
+            const result = sanitizePII(input);
+            document.getElementById('sanitizedOutput').value = result.sanitized;
+            currentMapping = result.mapping;
+
+            // Show mapping
+            const mappingDiv = document.getElementById('mapping');
+            const mappingContent = document.getElementById('mappingContent');
+            
+            if (Object.keys(result.mapping).length > 0) {
+                mappingDiv.classList.remove('hidden');
+                mappingContent.innerHTML = Object.entries(result.mapping)
+                    .map(([key, value]) => `<div class="mb-1"><span class="text-blue-400">${key}</span> <span class="text-war-room-400">→</span> <span class="text-emerald-400">${value}</span></div>`)
+                    .join('');
+            } else {
+                mappingDiv.classList.add('hidden');
+            }
+        }
+
+        function fillExample() {
+            document.getElementById('rawInput').value = `EMPLOYMENT AGREEMENT
+
+This Employment Agreement is entered into on January 15, 2026, between TechCorp Solutions and John Smith.
+
+TERMS:
+1. Position: Senior Software Engineer
+2. Salary: $120,000 per annum
+3. Start Date: February 1, 2026
+4. Contact: john.smith@techcorp.com
+5. Phone: +1-555-0123
+
+PAYMENT SCHEDULE:
+- Initial payment: $10,000 on 2026-02-01
+- Monthly: $5,000 on the 15th of each month
+- Bonus: $15,000 on 2026-12-31
+
+PARTIES:
+Employee: Jane Doe (jane.doe@email.com)
+Employer: Robert Johnson (robert@techcorp.com)
+
+Both parties agree to the terms outlined above.`;
+            sanitizeText();
+        }
+
+        function clearAll() {
+            document.getElementById('rawInput').value = '';
+            document.getElementById('sanitizedOutput').value = '';
+            document.getElementById('mapping').classList.add('hidden');
+            currentMapping = {};
+        }
+
+        // Smooth scroll for links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
