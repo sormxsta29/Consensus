@@ -4,4 +4,4 @@
 #fruit = "Mango"
 #print(fruit[-3:-1])
 nm = "Harry"
-print(nm[-4:-2])
+print(nm[-4:-2])      
