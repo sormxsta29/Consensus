@@ -1,0 +1,7 @@
+1. Write a function which returns True if the given string argument is palindrome
+and False if not.
+
+2. Write a function which reverses a string given as argument.
+
+3. Write a function which takes a dictionary of student_name and roll_no as an input
+and returns a list of names of students who have roll numbers divisible by 10.

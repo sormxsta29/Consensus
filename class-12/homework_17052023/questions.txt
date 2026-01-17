@@ -1,0 +1,2 @@
+1. Write a function to return random passwords which contains at least one uppercase alphabet,
+    lowercase alphabet, digit and punctuation, and is 8 letters long.
