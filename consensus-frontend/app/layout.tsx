@@ -26,9 +26,12 @@ export default function RootLayout({
               Consensus
             </Link>
             <div className="flex gap-6">
-              <Link href="/dashboard" className="flex items-center gap-1 hover:text-war-room-300">
+              <Link href="/workbench/dashboard" className="flex items-center gap-1 hover:text-war-room-300 font-semibold">
                 <FileText className="w-4 h-4" />
-                Dashboard
+                Workbench
+              </Link>
+              <Link href="/workbench/ai-analysis" className="flex items-center gap-1 hover:text-war-room-300 font-semibold text-purple-300">
+                🤖 AI Analysis
               </Link>
               <Link href="/upload" className="flex items-center gap-1 hover:text-war-room-300">
                 <Shield className="w-4 h-4" />
