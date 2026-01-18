@@ -13,6 +13,7 @@ export default function Sidebar() {
         <Link className="block px-3 py-2 rounded hover:bg-slate-100" href="/workbench/dashboard">Dashboard</Link>
         <Link className="block px-3 py-2 rounded hover:bg-slate-100" href="/workbench/create">Create / Upload</Link>
         <Link className="block px-3 py-2 rounded hover:bg-slate-100" href="/workbench/review">Review & Approval</Link>
+        <Link className="block px-3 py-2 rounded hover:bg-slate-100 font-medium text-purple-600" href="/workbench/ai-analysis">🤖 AI Analysis</Link>
         <Link className="block px-3 py-2 rounded hover:bg-slate-100" href="/workbench/compare">Compare</Link>
         <Link className="block px-3 py-2 rounded hover:bg-slate-100" href="/workbench/audit">Audit & History</Link>
       </nav>
