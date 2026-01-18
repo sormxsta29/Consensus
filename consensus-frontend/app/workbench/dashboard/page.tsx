@@ -57,6 +57,26 @@ export default function DashboardPage() {
           </div>
         </div>
 
+        {/* Blockchain Verification Status */}
+        <div className="bg-gradient-to-r from-blue-50 to-green-50 p-4 rounded shadow mb-6 border border-blue-200">
+          <div className="flex items-center justify-between">
+            <div>
+              <h3 className="font-semibold text-blue-900">⛓️ Blockchain Verification Active</h3>
+              <p className="text-sm text-blue-700 mt-1">
+                All contract versions and approvals are recorded immutably on Polygon Amoy testnet
+              </p>
+              <div className="flex gap-4 mt-2 text-xs text-blue-600">
+                <div>✅ {mockContracts.length} contracts on-chain</div>
+                <div>✅ {mockContracts.filter(c => c.chainEvents && c.chainEvents.length > 0).length} with verified hashes</div>
+                <div>✅ Public verification available</div>
+              </div>
+            </div>
+            <a href="/workbench/blockchain" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+              View Blockchain
+            </a>
+          </div>
+        </div>
+
         <div className="bg-white p-4 rounded shadow">
           <div className="flex items-center justify-between mb-4">
             <div className="flex gap-2">

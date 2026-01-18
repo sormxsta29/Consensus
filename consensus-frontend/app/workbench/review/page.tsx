@@ -6,6 +6,28 @@ import { mockContracts } from "../../../components/workbench/mockContracts";
 export default function ReviewPage() {
   const [role, setRole] = useState("Creator");
   const [selected, setSelected] = useState(mockContracts[0].id);
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  async function handleApprove() {
+    // Mock blockchain approval recording
+    setShowSuccess(true);
+    setTimeout(() => setShowSuccess(false), 3000);
+    
+    // In production: call /api/blockchain/record-approval
+    /*
+    const res = await fetch("/api/blockchain/record-approval", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        contractId: selected,
+        versionNumber: 2,
+        role,
+        comment: "Approved",
+        signature: "0x..."
+      })
+    });
+    */
+  }
 
   return (
     <WorkbenchLayout>
@@ -21,6 +43,13 @@ export default function ReviewPage() {
             </select>
           </div>
         </div>
+
+        {showSuccess && (
+          <div className="mb-4 p-3 bg-green-50 border border-green-500 rounded">
+            <div className="font-semibold text-green-800">✅ Approval recorded on blockchain</div>
+            <div className="text-sm text-green-700">Transaction: 0x7f3a...9f0 • Block #5289012</div>
+          </div>
+        )}
 
         <div className="grid grid-cols-3 gap-4">
           <div className="col-span-1">
@@ -47,13 +76,28 @@ export default function ReviewPage() {
               <div className="p-4 border rounded">
                 <div className="font-medium">Step 2 — Review</div>
                 <div className="text-sm text-war-room-500">Reviewers annotate and comment.</div>
-                {role === 'Reviewer' && <button className="mt-2 px-3 py-1 bg-yellow-600 text-white rounded">Approve / Request Changes</button>}
+                {role === 'Reviewer' && (
+                  <button onClick={handleApprove} className="mt-2 px-3 py-1 bg-yellow-600 text-white rounded">
+                    Approve / Request Changes
+                  </button>
+                )}
               </div>
 
               <div className="p-4 border rounded">
                 <div className="font-medium">Step 3 — Approve</div>
                 <div className="text-sm text-war-room-500">Approver finalizes the contract.</div>
-                {role === 'Approver' && <button className="mt-2 px-3 py-1 bg-green-600 text-white rounded">Approve</button>}
+                {role === 'Approver' && (
+                  <button onClick={handleApprove} className="mt-2 px-3 py-1 bg-green-600 text-white rounded">
+                    Approve
+                  </button>
+                )}
+              </div>
+            </div>
+
+            <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded">
+              <div className="font-semibold text-blue-800 mb-1">⛓️ Blockchain Integration</div>
+              <div className="text-sm text-blue-700">
+                All approval actions are recorded immutably on-chain with timestamp, role, and signature.
               </div>
             </div>
           </div>

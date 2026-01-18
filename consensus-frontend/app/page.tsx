@@ -101,7 +101,7 @@ export default function Home() {
             </div>
             <div className="bg-war-room-800/50 p-4 rounded-lg">
               <h3 className="font-semibold text-lg mb-2 text-yellow-300">✅ Review & Approval</h3>
-              <p className="text-sm text-war-room-300">Multi-step workflows with role-based access</p>
+              <p className="text-sm text-war-room-300">Multi-step workflows with blockchain-recorded approvals</p>
             </div>
             <div className="bg-war-room-800/50 p-4 rounded-lg">
               <h3 className="font-semibold text-lg mb-2 text-purple-300">🤖 AI Intelligence</h3>
@@ -114,6 +114,10 @@ export default function Home() {
             <div className="bg-war-room-800/50 p-4 rounded-lg">
               <h3 className="font-semibold text-lg mb-2 text-cyan-300">📜 Audit & History</h3>
               <p className="text-sm text-war-room-300">Unified timeline with blockchain-verified actions</p>
+            </div>
+            <div className="bg-war-room-800/50 p-4 rounded-lg border-2 border-green-500">
+              <h3 className="font-semibold text-lg mb-2 text-green-300">⛓️ Blockchain Verification</h3>
+              <p className="text-sm text-war-room-300">Immutable audit trail, hash verification, public trust layer</p>
             </div>
           </div>
         </div>
